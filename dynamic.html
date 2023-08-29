@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://localhost:5000/styles/dynamic.css">
+    <link rel="icon" type="image/x-icon" href="http://localhost:5000/assets/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Narnoor&family=Patrick+Hand&family=Sriracha&display=swap" rel="stylesheet">
+    <title>When & Where</title>
+</head>
+<body>
+    <div class="spacer wave1"></div>
+    <h1>Visszajelzése az eseményre</h1>
+    <div class="content">
+        <div class="center">
+            <h2>Válaszd ki, hogy melyik napok jók számodra:</h2>
+            <div id="dayHolder"></div>
+            <form id="form">
+                <div class="input">
+                    <label for="name">Your name:</label>
+                    <input name="name" type="text" id="name" maxlength="30" required>
+                </div>
+                <div>
+                    <button class="dayCard submit" type="submit">Küldés</button>
+                </div>
+            </form>
+            <button class="toResult" onclick="toResults()">Eredmény megtekintése</button>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('form');
+        const URL = window.location.href; //get the link name from url
+        const link = URL.split('/').pop();
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            if(chosen.length == 0){
+                alert('nem választottál ki egyetlen napot sem!');
+            } else {
+                const formData = new FormData(form);
+                const name = formData.get('name');
+                console.log('name: ' + name);
+                const datas = {
+                    link: link,
+                    day : chosen,
+                    name: name
+                };
+                
+                const savingResponse = await fetch ('http://localhost:5000/savingResponse', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(datas)
+                });
+                if (!savingResponse.ok) {
+                    console.error('Error sending response');
+                    return;
+                }        
+                window.location.href = `http://127.0.0.1:5500/HTML/idoegyezteto/30_days/response2.html?message=http://localhost:5000/result/` + `${link}`;
+            }
+        });
+
+        function toResults(){
+            console.log(link);
+            window.location.href = `http://localhost:5000/result/` + `${link}`;
+        }
+
+        const days = JSON.parse('{{ dynamicData }}');
+        const dayHolder = document.getElementById("dayHolder");
+        const month = ["Január","Február","Március","Április","Május","Június","Július","Augusztus","Szeptember","Október","November","December"];
+        const d = new Date();
+        const currentDay = d.getDate();
+
+        var chosen = [];
+
+        class DayCard{
+            thisMonth;
+            nextMonth;
+            dayCard;
+            isChosen;
+            constructor(num){
+                this.thisMonth = month[d.getMonth()];
+                if(d.getMonth() == 11) this.nextMonth = month[0];
+                else this.nextMonth = month[d.getMonth() + 1];
+                this.dayCard = document.createElement('button');
+                //adding texts to button
+                if(parseInt(num) >= currentDay){
+                    this.dayCard.innerHTML = `<p class="month">${this.thisMonth}</p><p>${num}</p>`;
+                } else {
+                    this.dayCard.innerHTML = `<p class="month">${this.nextMonth}</p><p>${num}</p>`;
+                }
+                this.dayCard.classList.add('dayCard');
+                this.isChosen = false;
+            
+                this.dayCard.addEventListener('click', () => {
+                    if(this.isChosen){
+                        this.isChosen = false;
+                        this.dayCard.classList.remove("chosen");
+                        var index = chosen.indexOf(num);
+                        if(index != -1){
+                            chosen.splice(index, 1);
+                        }
+                    } else {
+                        this.isChosen = true;
+                    this.dayCard.classList.add("chosen");
+                    chosen.push(num);                
+                    }
+                })
+            }
+            get(){
+                return this.dayCard;
+            }
+        }
+
+        days.forEach(element => {
+            var b = new DayCard(element.hours);
+            dayHolder.append(b.get());
+        });
+    </script>
+</body>
+</html>

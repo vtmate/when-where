@@ -1,0 +1,102 @@
+body{
+
+    margin: 0;
+    background-image: url('../assets/blob-scene2.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #001524;
+    color: white;
+    font-family: 'Sriracha', cursive;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+}
+
+.center{
+    text-align: center;
+}
+
+h1{
+    margin-top: 15vw;
+    padding-inline: 3rem;
+}
+
+h2{
+    margin-bottom: 2rem;
+}
+
+p{
+    margin-top: 0.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.button {
+    width: 11rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-inline: 0.2rem;
+    padding-top: 1.5rem;
+    border-radius: 1rem;
+    border: none;
+    overflow: hidden;
+    background: white;
+    color: #001524;
+    margin-inline: 0.3rem;
+    margin-bottom: 0.3rem;
+  }
+
+.button-text {
+    font-size: 1em;
+    font-weight: 600;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+  }
+
+.right-button-text{
+    transform: translateX(3.3rem);
+}
+.left-button-text{
+    transform: translateX(-0.6rem);
+}
+
+.right-iconer {
+  transform: translateX(2rem) translateY(0.1rem);
+  transition-duration: 0.3s;
+  color: transparent;
+}
+.left-iconer {
+  transition-duration: 0.3s;
+  transform: rotate(180deg) translateX(-0.7rem) translateY(0.1rem);
+  color: transparent;
+}
+
+.button:hover{
+  cursor: pointer;
+}
+
+.button:hover .right-button-text {
+  transform: translateX(2.7rem);
+}
+.button:hover .left-button-text {
+  transform: translateX(-0.2rem);
+}
+
+.button:hover .right-iconer {
+  transform: translateX(2.3rem) translateY(0.1rem);
+  color: #001524;
+}
+
+.button:hover .left-iconer {
+  transform: rotate(180deg) translateX(-0.2rem) translateY(0.1rem);
+  color: #001524;
+}

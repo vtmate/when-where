@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    --first: #15616d;
+    --second: #f9b24d;
+    --third: #0e9594;
+    --fourth: #001524;
+    --text: #ffecd1;
+}
+
+body{
+    background-color: var(--first);
+    font-family: 'Sriracha', cursive;
+    overflow-x: hidden;
+}
+
+.spacer{
+    position: absolute;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+}
+
+.wave1{
+    background-image: url('http://localhost:5000/assets/wave5.svg');
+    height: 800px;
+}
+
+h1{
+    text-align: center;
+    padding-top: min(3vw, 2rem);
+    margin-bottom: min(6vw, 2rem);
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.center{
+    margin-inline: 1rem;
+}
+
+
+#dayHolder{
+    max-width: 39rem;
+}
+
+.dayCard{
+    width: 12rem;
+    margin-inline: 0.5rem;
+    margin-top: 0.5rem;
+    padding: 0;
+}
+
+button{
+    position: relative;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text);
+    background-color: var(--third);
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    border: 0;
+    border-radius: 3px;
+}
+
+.dayCard > p{
+    padding-top: 0.2rem;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    padding: 0.6rem 0;
+}
+
+.counter{
+    position: absolute;
+    right: 0.2rem;
+    top: -0.2rem;
+    width: 1.1rem;
+    height: 1rem;
+    border-radius: 0.5rem;
+    background-color: var(--second);
+    color: var(--fourth);
+}
+
+.list{
+    background-color: var(--second);
+    color: var(--fourth);
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    text-align: left;
+}
+
+.month{
+    background-color: var(--fourth);
+}
+
+@media screen and (max-width: 698px) {
+    
+
+    #dayHolder{
+        width: 90vw;
+        margin-inline: 5vw;
+    }
+
+    .dayCard{
+        margin-inline: 2vw;
+        width: 41vw;
+    }
+}

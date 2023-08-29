@@ -1,0 +1,154 @@
+*{
+    margin: 0;
+    --first: #15616d;
+    --second: #f9b24d;
+    --third: #0e9594;
+    --fourth: #001524;
+    --text: #ffecd1;
+}
+
+body{
+    background-color: var(--first);
+    font-family: 'Sriracha', cursive;
+    overflow-x: hidden;
+}
+
+.spacer{
+    position: absolute;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+}
+
+.wave1{
+    background-image: url('../assets/wave1.svg');
+    height: 800px;
+}
+
+.wave2{
+    background-image: url('../assets/wave2.svg');
+    height: 200px;
+}
+
+h1{
+    text-align: center;
+    color:var(--fourth);
+    padding-top: 3vw;
+    margin-bottom: 6vw;
+}
+
+h2{
+    color: var(--fourth);
+
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#dayHolder{
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    grid-gap: 3px;
+    width: 40rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+button{
+    border: 0;
+    height: 2.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text);
+    background-color: var(--third);
+    transition: all 0.3s ease-in-out;
+    border-radius: 3px;
+}
+
+.dayButton:hover{
+    background-color: var(--fourth);
+    cursor: pointer;
+}
+
+.dayButton:active{
+    background-color: var(--second);
+    color: var(--first)
+}
+
+.chosen{
+    background-color: var(--second);
+    color: var(--first)
+}
+
+.chosen:hover{
+    background-color: var(--second);
+    color: var(--first)
+}
+
+.dayOfWeek{
+    background-color: var(--fourth);
+}
+
+.unclickable{
+    pointer-events: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+label{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white
+}
+
+input{
+    height: 1.7rem;
+    font-size: 1rem;
+    margin-left: 1rem;
+    margin-right: 5.1rem;
+}
+
+
+footer{
+    color: var(--text);
+    padding-top: 7rem;
+}
+
+
+@media screen and (max-width: 698px) {
+
+    h2{
+        margin-left: 1rem;
+    }
+    
+    #dayHolder{
+        width: 94vw;
+        margin-inline: 3vw;
+    }
+    
+    label{
+        display: block;
+        text-align: center;
+    }
+    
+    input{
+        margin-right: 0;
+        display: block;
+        width: 40vw;
+        margin-left: 30vw;
+    }
+    
+    .create{
+        display: block;
+        margin-top: 1rem;
+        margin-left: 20vw;
+        width: 60vw;
+    }
+}

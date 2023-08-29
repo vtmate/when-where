@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://localhost:5000/styles/result.css">
+    <link rel="icon" type="image/x-icon" href="http://localhost:5000/assets/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Narnoor&family=Patrick+Hand&family=Sriracha&display=swap" rel="stylesheet">
+    <title>When & Where</title>
+</head>
+<body>
+    <div class="spacer wave1"></div>
+    <h1>A szavazás eredményei</h1>
+    <div class="content">
+        <div class="center">
+            <div id="dayHolder"></div>
+        </div>
+    </div>
+
+    <script>
+        //result => responses
+        const stringResult = '{{ dynamicData }}';
+        const result = JSON.parse(stringResult);
+        const days = result.map(item => item.day);
+        const names = result.map(item => item.name);
+        //result2 => goodDays
+        const stringResult2 = '{{ dynamicData2 }}';
+        const result2 = JSON.parse(stringResult2);
+
+        const dayHolder = document.getElementById('dayHolder');
+
+        const month = ["Január","Február","Március","Április","Május","Június","Július","Augusztus","Szeptember","Október","November","December"];
+        const d = new Date();
+        const currentDay = d.getDate();
+
+        var chosen = [];
+
+        class DayCard{
+            thisMonth;
+            nextMonth;
+            dayCard;
+            isChosen;
+            constructor(num){
+                this.thisMonth = month[d.getMonth()];
+                if(d.getMonth() == 11) this.nextMonth = month[0];
+                else this.nextMonth = month[d.getMonth() + 1];
+                this.dayCard = document.createElement('button');
+                
+                //adding texts to button
+                if(parseInt(num) >= currentDay){
+                    this.dayCard.innerHTML = `<p class="month">${this.thisMonth}</p><p>${num}</p><div class="list"></div>`;
+                } else {
+                    this.dayCard.innerHTML = `<p class="month">${this.nextMonth}</p><p>${num}</p><div class="list"></div>`;
+                }
+                this.dayCard.classList.add('dayCard');
+                this.isChosen = false;
+            }
+            get(){
+                return this.dayCard;
+            }
+        }
+
+        //creating dayCards
+        result2.forEach(element => {
+            var b = new DayCard(element.hours);
+            dayHolder.append(b.get());
+        });
+
+        //updating list of names
+        const list = document.querySelectorAll('.list');
+
+        var index = 0;
+        result.forEach(vote => {
+            index = 0;
+            while(index < result2.length) {
+                console.log('vote.day: ' + vote.day);
+                console.log(vote.day == result2[index].hours);
+                if(String(vote.day) == String(result2[index].hours)){
+                    console.log('talalt');
+                    const listEl = document.createElement('p');
+                    listEl.innerText = '\u00A0- ' + vote.name;
+                    console.log(index);
+                    list[index].append(listEl);
+                }
+                index++;
+            };
+        });
+    </script>
+</body>
+</html>

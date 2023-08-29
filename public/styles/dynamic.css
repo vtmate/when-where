@@ -1,0 +1,191 @@
+*{
+    margin: 0;
+    --first: #15616d;
+    --second: #f9b24d;
+    --third: #0e9594;
+    --fourth: #001524;
+    --text: #ffecd1;
+}
+
+body{
+    background-color: var(--first);
+    font-family: 'Sriracha', cursive;
+}
+
+.spacer{
+    position: absolute;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+}
+
+.wave1{
+    background-image: url('http://localhost:5000/assets/wave5.svg');
+    height: 800px;
+}
+
+h1{
+    text-align: center;
+    padding-top: min(3vw, 2rem);
+    margin-bottom: min(6vw, 2rem);
+}
+
+h2{
+    color:var(--fourth);
+    margin-bottom: 1rem;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.center{
+    margin-inline: 1rem;
+}
+
+
+#dayHolder{
+    max-width: max(60vw,30rem);
+    max-width: clamp(30rem, 60vw, 35rem);
+}
+
+.dayCard{
+    width: clamp(5rem, 10vw, 5.83333rem);
+    margin-inline: clamp(0.5rem, 1vw, 0.58333rem);
+    margin-top: 0.5rem;
+    padding: 0;
+}
+
+h2, form{
+    margin-inline: clamp(0.5rem, 1vw, 0.58333rem);
+}
+
+button{
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text);
+    background-color: var(--third);
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    border: 0;
+    border-radius: 3px;
+}
+
+.dayCard > p{
+    padding-top: clamp(0.2rem, 0.6vw, 0.6rem);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    height: clamp(1.3rem, 1.5vw, 1.5rem)
+}
+
+.dayCard:hover{
+    background-color: var(--fourth);
+    cursor: pointer;
+}
+
+.dayCard:active{
+    background-color: var(--second);
+}
+
+.dayCard p:nth-child(2):active{
+    color: var(--first)
+}
+
+.chosen{
+    background-color: var(--second);
+}
+
+.chosen p:nth-child(2){
+    color: var(--first)
+}
+
+.chosen:hover{
+    background-color: var(--second);
+    /* color: var(--first) */
+}
+
+.month{
+    background-color: var(--fourth);
+}
+
+form{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+label{
+    color: var(--text);
+    margin-right: 0.6rem;
+}
+
+.submit{
+    padding: 0.2rem;
+}
+
+.submit:active{
+    color: var(--first);
+}
+
+.toResult{
+    margin-top: 4rem;
+    cursor: pointer;
+    padding: 0.2rem;
+}
+
+@media screen and (max-width: 538px) {
+
+    .dayCard{
+        width: 35vw;
+    }
+
+    .dayCard > p{
+        margin-bottom: 0.2rem;
+        height: 2rem;
+        font-size: 1.3rem;
+    } 
+
+    #dayHolder{
+        margin: 0 auto;
+        width: 80vw;
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+
+    form{
+        flex-direction: column;
+        margin-top: 0;
+    }
+
+    form div:nth-child(2){
+        display: flex;
+        justify-content: center;
+    }
+
+    label{
+        font-size: 1.5rem;
+        margin-left: 3.4rem;
+        margin-right: 0;
+    }
+
+    input{
+        display: flex;
+        flex-direction: column;
+        margin-left: 0.5rem;
+        height: 2rem;
+        font-size: 1.1rem;
+    }
+
+    .input{
+        margin: 1rem auto;
+    }
+
+
+    .submit{
+        width: 8rem;
+        padding: 0.5rem 0;
+    }
+}
