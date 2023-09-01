@@ -1,7 +1,7 @@
 // Retrieve the query parameter
 var params = new URLSearchParams(window.location.search);
 var message = params.get('message');
-link = 'http://localhost:5000/respond/' + message;
+link = 'https://when-and-where.onrender.com/respond/' + message;
 
 // Update the paragraph text
 document.getElementById('customLink').innerText = link;

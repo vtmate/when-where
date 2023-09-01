@@ -18,11 +18,18 @@ app.use(express.json());
 //load environment variables from .env
 require('dotenv').config();
 
+//hosting index.html
+app.get('/', (req, res) => {
+    const indexPath = path.join(__dirname, 'index.html');
+    res.sendFile(indexPath);
+});
+
+//creating connection with DB
 const pool = mysql.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     password: process.env.DB_PASS,
-    database: '30days',
+    database: 'sql7643637',
     connectionLimit: 10
 });
 

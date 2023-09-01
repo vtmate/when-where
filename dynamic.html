@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="http://localhost:5000/styles/dynamic.css">
-    <link rel="icon" type="image/x-icon" href="http://localhost:5000/assets/favicon.ico">
+    <link rel="stylesheet" href="https://when-and-where.onrender.com/styles/dynamic.css">
+    <link rel="icon" type="image/x-icon" href="https://when-and-where.onrender.com/assets/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Narnoor&family=Patrick+Hand&family=Sriracha&display=swap" rel="stylesheet">
@@ -49,7 +49,7 @@
                     name: name
                 };
                 
-                const savingResponse = await fetch ('http://localhost:5000/savingResponse', {
+                const savingResponse = await fetch ('https://when-and-where.onrender.com/savingResponse', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -60,13 +60,13 @@
                     console.error('Error sending response');
                     return;
                 }        
-                window.location.href = `http://127.0.0.1:5500/HTML/idoegyezteto/30_days/response2.html?message=http://localhost:5000/result/` + `${link}`;
+                window.location.href = `http://127.0.0.1:5500/HTML/idoegyezteto/30_days/response2.html?message=https://when-and-where.onrender.com/result/` + `${link}`;
             }
         });
 
         function toResults(){
             console.log(link);
-            window.location.href = `http://localhost:5000/result/` + `${link}`;
+            window.location.href = `https://when-and-where.onrender.com/result/` + `${link}`;
         }
 
         const days = JSON.parse('{{ dynamicData }}');

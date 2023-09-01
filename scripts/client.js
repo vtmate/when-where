@@ -173,7 +173,7 @@ form.addEventListener('submit', async function(e) {
     } else {
         try {
             // 1. Retrieving the current counter
-            const retrieveCounter = await fetch('http://localhost:5000/retrieveCounter');
+            const retrieveCounter = await fetch('https://when-and-where.onrender.com/retrieveCounter');
         
             if (retrieveCounter.ok) {
                 var counter = await retrieveCounter.json();
@@ -186,7 +186,7 @@ form.addEventListener('submit', async function(e) {
                 console.log('Link: ' + link);
         
                 // 3. Incrementing the counter
-                const incrementCounter = await fetch('http://localhost:5000/incrementCounter', {
+                const incrementCounter = await fetch('https://when-and-where.onrender.com/incrementCounter', {
                     method: 'POST'
                 });
                 if (!incrementCounter.ok) {
@@ -215,7 +215,7 @@ form.addEventListener('submit', async function(e) {
                     hours: chosen
                 };
 
-                const savingGoodDays = await fetch('http://localhost:5000/savingGoodDays', {
+                const savingGoodDays = await fetch('https://when-and-where.onrender.com/savingGoodDays', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
