@@ -5,7 +5,7 @@ const cors = require('cors');
 const fs = require('fs');
 app.use(cors());
 
-// UPDATE `counter` SET `count`=0
+// UPDATE `counter` SET `count`=0;
 // DELETE FROM `events`;
 // DELETE FROM `responses`;
 

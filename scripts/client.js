@@ -81,7 +81,7 @@ for(var i = 1; i <= 30-counter; i++){
 }
 
 //blank buttons after the 30 days
-var remain = 7 - index - 2;
+var remain = 7 - index - 1;
 if(index == 7) remain = 6;
 for(var i = 0; i < remain; i++){
     var blank = document.createElement('button');
