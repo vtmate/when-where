@@ -3,6 +3,8 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const fs = require('fs');
+const path = require('path');
+
 app.use(cors());
 
 // UPDATE `counter` SET `count`=0;
@@ -11,6 +13,10 @@ app.use(cors());
 
 //serving static files
 app.use(express.static('public'));
+app.use('/scripts', express.static(path.join(__dirname, 'scripts')));
+app.use('/styles', express.static(path.join(__dirname, 'styles')));
+app.use('/assets', express.static(path.join(__dirname, 'assets')));
+
 
 //middleware that parses req.body into JSON
 app.use(express.json());
@@ -22,6 +28,18 @@ require('dotenv').config();
 app.get('/', (req, res) => {
     const indexPath = path.join(__dirname, 'index.html');
     res.sendFile(indexPath);
+});
+
+//hosting response.html
+app.get('/response.html', (req, res) => {
+    const filePath = path.join(__dirname, 'response.html');
+    res.sendFile(filePath);
+});
+
+//hosting response.html
+app.get('/response2.html', (req, res) => {
+    const filePath = path.join(__dirname, 'response2.html');
+    res.sendFile(filePath);
 });
 
 //creating connection with DB
@@ -47,7 +65,7 @@ app.get('/respond/:link', async (req, res) => {
         }
         console.log(result);
 
-        fs.readFile('dynamic.html', 'utf-8', async (err, html) => {
+        fs.readFile(path.join(__dirname, 'dynamic.html'), 'utf-8', async (err, html) => {
             if (err) {
                 res.status(500).send('Error reading HTML file');
                 return;
@@ -80,7 +98,8 @@ app.get('/result/:link', async (req, res) => {
         }
         console.log(result);
 
-        fs.readFile('result.html', 'utf-8', async (err, html) => {
+        const filePath = path.join(__dirname, 'result.html');
+        fs.readFile(filePath, 'utf-8', async (err, html) => {
         if (err) {
             res.status(500).send('Error reading HTML file');
             return;
