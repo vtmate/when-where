@@ -21,6 +21,7 @@ body{
 h1{
     margin-top: 15vw;
     padding-inline: 3rem;
+    line-height: 2.2rem;
 }
 
 h2{
@@ -53,20 +54,20 @@ p{
     color: #001524;
     margin-inline: 0.3rem;
     margin-bottom: 0.3rem;
-  }
+}
 
 .button-text {
     font-size: 1em;
     font-weight: 600;
     transition-duration: 0.3s;
     transition-timing-function: ease-out;
-  }
+}
 
 .right-button-text{
-    transform: translateX(3.3rem);
+    transform: translateX(2.9rem);
 }
 .left-button-text{
-    transform: translateX(-0.6rem);
+    transform: translateX(1.8rem);
 }
 
 .right-iconer {
@@ -76,7 +77,7 @@ p{
 }
 .left-iconer {
   transition-duration: 0.3s;
-  transform: rotate(180deg) translateX(-0.7rem) translateY(0.1rem);
+  transform: rotate(180deg) translateX(-2.6rem) translateY(0.1rem);
   color: transparent;
 }
 
@@ -85,10 +86,10 @@ p{
 }
 
 .button:hover .right-button-text {
-  transform: translateX(2.7rem);
+  transform: translateX(2.5rem);
 }
 .button:hover .left-button-text {
-  transform: translateX(-0.2rem);
+  transform: translateX(2.2rem);
 }
 
 .button:hover .right-iconer {
@@ -97,6 +98,39 @@ p{
 }
 
 .button:hover .left-iconer {
-  transform: rotate(180deg) translateX(-0.2rem) translateY(0.1rem);
+  transform: rotate(180deg) translateX(-2.2rem) translateY(0.1rem);
   color: #001524;
+}
+
+@media screen and (max-width: 470px) {
+   
+
+    .buttons button{
+        margin-inline: 5rem;
+    }
+
+    .left-iconer, .right-iconer{
+        display: none;
+    }
+
+    .left-button-text {
+        transform: translateX(3.5rem);
+    }
+
+    .right-button-text {
+        transform: translateX(2.2rem);
+    }
+
+    .tip-comp{
+        display: none;
+    }
+
+    .tip-ph{
+        display: block;
+    }
+
+    .button{
+        width: 10rem;
+        margin-bottom: 0.5rem;
+    }
 }
