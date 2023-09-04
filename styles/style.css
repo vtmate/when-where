@@ -134,19 +134,15 @@ footer{
 @media screen and (max-width: 698px) {
 
     h2{
+        margin-top: 2rem;
         margin-left: 1rem;
+        margin-bottom: 2rem;
     }
     
     #dayHolder{
         width: 94vw;
         margin-inline: 3vw;
     }
-
-    /* form{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    } */
 
     .flex{
         display: flex;
@@ -170,4 +166,17 @@ footer{
         margin-top: 1rem;
         width: 60vw;
     }
+}
+
+@media screen and (max-width: 450px) {
+    
+    .dayButton:hover{
+        background-color: var(--third);
+    }
+
+    .chosen:hover{
+        background-color: var(--second);
+        color: var(--first)
+    }
+    
 }
