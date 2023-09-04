@@ -91,7 +91,7 @@ button{
 }
 
 .dayCard p:nth-child(2):active{
-    color: var(--first)
+    color: var(--first);
 }
 
 .chosen{
@@ -145,7 +145,7 @@ label{
     display: inline-block;
     color: var(--text);
     margin-right: 4.1rem;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 .toResult button{
@@ -214,6 +214,10 @@ label{
         margin-top: 0.2rem;
         padding: 0.6rem 0;
     }
+
+    .toResult p{
+        font-size: 1.5rem;
+    }
 }
 
 @media screen and (max-width: 450px) {
@@ -224,6 +228,6 @@ label{
 
     .chosen:hover{
         background-color: var(--second);
-        color: var(--first)
+        /* color: var(--first); */
     }
 }
