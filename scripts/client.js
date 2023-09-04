@@ -60,7 +60,8 @@ for(var i = 0; i < 7; i++){
 }
 
 //blank buttons before today's date
-const index = dt.getDay();
+var index = dt.getDay();
+if(index == 0) index = 7;
 for(var i = 0; i < index - 1; i++){
     var blank = document.createElement('button');
     dayHolder.append(blank);
