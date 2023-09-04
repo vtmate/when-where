@@ -134,9 +134,7 @@ footer{
 @media screen and (max-width: 698px) {
 
     h2{
-        margin-top: 2rem;
         margin-left: 1rem;
-        margin-bottom: 2rem;
     }
     
     #dayHolder{
@@ -178,5 +176,13 @@ footer{
         background-color: var(--second);
         color: var(--first)
     }
-    
+
+    h1{
+        padding-top: 3rem;
+    }
+
+    h2{
+        margin-left: 1rem;
+        margin-bottom: 1rem;
+    }
 }
