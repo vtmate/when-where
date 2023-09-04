@@ -126,6 +126,9 @@ footer{
     padding-inline: 2rem;
 }
 
+.flex{
+    display: inline;
+}
 
 @media screen and (max-width: 698px) {
 
@@ -137,6 +140,17 @@ footer{
         width: 94vw;
         margin-inline: 3vw;
     }
+
+    /* form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    } */
+
+    .flex{
+        display: flex;
+        justify-content: center;
+    }
     
     label{
         display: block;
@@ -147,13 +161,12 @@ footer{
         margin-right: 0;
         display: block;
         width: 40vw;
-        margin-left: 30vw;
+        margin-left: 0;
     }
     
     .create{
         display: block;
         margin-top: 1rem;
-        margin-left: 20vw;
         width: 60vw;
     }
 }
