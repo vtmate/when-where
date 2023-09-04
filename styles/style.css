@@ -41,7 +41,7 @@ h1{
 
 h2{
     color: var(--fourth);
-
+    line-height: 2rem;
 }
 
 .content{
@@ -92,6 +92,7 @@ button{
 
 .dayOfWeek{
     background-color: var(--fourth);
+    text-align: center;
 }
 
 .unclickable{
@@ -112,13 +113,17 @@ input{
     height: 1.7rem;
     font-size: 1rem;
     margin-left: 1rem;
-    margin-right: 5.1rem;
+    margin-right: 7.35rem;
 }
 
 
 footer{
     color: var(--text);
     padding-top: 7rem;
+}
+
+.create{
+    padding-inline: 2rem;
 }
 
 
