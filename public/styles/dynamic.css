@@ -112,8 +112,7 @@ button{
 }
 
 .flex{
-    display: flex;
-    justify-content: center;
+    display: inline-block;
 }
 
 form{
@@ -125,6 +124,7 @@ form{
 label{
     color: var(--text);
     margin-right: 0.6rem;
+    font-size: 1.2rem;
 }
 
 .submit{
@@ -203,6 +203,11 @@ label{
     .submit{
         width: 8rem;
         padding: 0.5rem 0;
+    }
+
+    .flex{
+        display: flex;
+        justify-content: center;
     }
 
     .toResult{
