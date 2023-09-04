@@ -178,10 +178,11 @@ footer{
     }
 
     h1{
-        padding-top: 3rem;
+        padding-top: 2rem;
     }
 
     h2{
+        margin-top: 1rem;
         margin-left: 1rem;
         margin-bottom: 1rem;
     }

@@ -13,11 +13,18 @@
 <body>
     <div class="content">
         <div class="center">
-            <h1>Köszi, hogy létrehoztad az eseményt!</h1>
-            <h2>Érezzétek jól magatokat! &nbsp; Itt van a link:</h2>
+            <div class="h1-holder">
+                <h1>Köszi, hogy létrehoztad az eseményt!</h1>
+            </div>
+            <div class="h2-holder">
+                <h2>Érezzétek jól magatokat! &nbsp; Itt van a link:</h2>
+            </div>
             <div class="link-row">
                 <p id="customLink"></p>
-                <button class="copy" id="copy"><img class="copy-img" src="assets/copy-icon.png"></button>
+                <div class="tooltip">
+                    <button class="copy" id="copy"><img class="copy-img" src="assets/copy-icon.png"></button>
+                    <span class="tooltiptext">Link másolása</span>
+                </div>
             </div>
             <div class="buttons">
                 <button class="button" id="create-more">

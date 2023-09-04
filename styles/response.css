@@ -18,6 +18,10 @@ body{
     text-align: center;
 }
 
+.h1-holder, .h2-holder{
+    display: inline;
+}
+
 h1{
     margin-top: 15vw;
     padding-inline: 3rem;
@@ -25,6 +29,7 @@ h1{
 
 h2{
     margin-bottom: 0;
+    margin-inline: 1rem;
 }
 
 p{
@@ -33,28 +38,57 @@ p{
 }
 
 .link-row{
-  display: inline-block;
-  margin-bottom: 1rem;
+    display: inline-block;
+    margin-bottom: 1rem;
 }
 
 #customLink{
-  display: inline-block;
-  vertical-align: middle;
-  margin: 0;
-  margin-bottom: 1rem;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+    margin-bottom: 1rem;
 }
 
 .copy{
-  background-color: transparent;
-  border-style: none;
+    background-color: transparent;
+    border-style: none;
 }
 
 .copy:hover{
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .copy-img{
-  height: 1.5rem;
+    height: 1.5rem;
+}
+
+/* Style the tooltip */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: white;
+    color: #001524;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Position the tooltip above the button */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Show the tooltip on hover */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }
 
 .buttons{
@@ -124,4 +158,34 @@ p{
 .button:hover .left-iconer {
   transform: rotate(180deg) translateX(-0.2rem) translateY(0.1rem);
   color: #001524;
+}
+
+@media screen and (max-width: 560px) {
+
+    #customLink{
+        width: 60vw;
+    }
+}
+
+@media screen and (max-width: 470px) {
+   
+    .h1-holder, .h2-holder{
+        display: flex;
+        justify-content: center;
+    }
+
+    h1,h2{
+        margin-inline: 0;
+        padding-inline: 0;
+        width: 16.5rem;
+    }
+
+    h2{
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+
+    .buttons button{
+        margin-inline: 5rem;
+    }
 }
