@@ -163,7 +163,7 @@ p{
 @media screen and (max-width: 560px) {
 
     #customLink{
-        width: 60vw;
+        display: none;
     }
 }
 
@@ -177,7 +177,7 @@ p{
     h1,h2{
         margin-inline: 0;
         padding-inline: 0;
-        width: 16.5rem;
+        width: 18rem;
     }
 
     h2{
@@ -187,5 +187,13 @@ p{
 
     .buttons button{
         margin-inline: 5rem;
+    }
+
+    .left-iconer, .right-iconer{
+        display: none;
+    }
+
+    .left-button-text {
+        transform: translateX(0rem);
     }
 }
