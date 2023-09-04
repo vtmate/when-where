@@ -93,6 +93,7 @@ button{
 .dayOfWeek{
     background-color: var(--fourth);
     text-align: center;
+    padding: 0;
 }
 
 .unclickable{
