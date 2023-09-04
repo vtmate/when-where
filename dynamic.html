@@ -15,7 +15,8 @@
     <h1>Visszajelzése az eseményre</h1>
     <div class="content">
         <div class="center">
-            <h2>Válaszd ki, hogy melyik napok jók számodra:</h2>
+            <!-- <h2>Válaszd ki, hogy melyik napok jók számodra:</h2> -->
+            <h2>Melyik napok jók neked?</h2>
             <div id="dayHolder"></div>
             <form id="form">
                 <div class="input">
@@ -26,7 +27,10 @@
                     <button class="dayCard submit" type="submit">Küldés</button>
                 </div>
             </form>
-            <button class="toResult" onclick="toResults()">Eredmény megtekintése</button>
+            <div class="toResult">
+                <p>Vagy ha már szavaztál:</p>
+                <button onclick="toResults()">Eredmény megtekintése</button>
+            </div>
         </div>
     </div>
 
