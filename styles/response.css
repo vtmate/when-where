@@ -62,6 +62,10 @@ p{
     height: 1.5rem;
 }
 
+.tip-ph{
+    display: none;
+}
+
 /* Style the tooltip */
 .tooltip {
     position: relative;
@@ -195,5 +199,21 @@ p{
 
     .left-button-text {
         transform: translateX(0rem);
+    }
+
+    .right-button-text {
+        transform: translateX(1.2rem);
+    }
+
+    .tip-comp{
+        display: none;
+    }
+
+    .tip-ph{
+        display: block;
+    }
+
+    .button{
+        width: 10rem;
     }
 }
