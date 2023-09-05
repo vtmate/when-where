@@ -130,6 +130,7 @@ label{
 .submit{
     padding-top: 0.2rem;
     padding-bottom: 0.2rem;
+    margin-inline: 0;
 }
 
 .submit:active{
@@ -224,6 +225,7 @@ label{
         margin-top: 0.2rem;
         padding: 0.6rem 0.2rem;
         height: 2.2rem;
+        width: 100%;
     }
 
     .toResult p{

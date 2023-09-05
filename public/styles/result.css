@@ -84,6 +84,18 @@ button{
     color: var(--fourth);
 }
 
+.toResponse{
+    display: flex;
+    justify-content: center;
+}
+
+.toResponse button{
+    padding: 0.2rem 0.8rem;
+    cursor: pointer;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+}
+
 .list{
     background-color: var(--second);
     color: var(--fourth);
