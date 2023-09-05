@@ -139,6 +139,7 @@ label{
     margin-top: 4rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .toResult p{
@@ -151,6 +152,7 @@ label{
 .toResult button{
     cursor: pointer;
     padding: 0.2rem;
+    height: 1.6rem;
 }
 
 @media screen and (max-width: 538px) {
@@ -213,11 +215,13 @@ label{
     .toResult{
         flex-direction: column;
         margin-bottom: 10rem;
+        align-items: baseline;
     }
 
     .toResult button{
         margin-top: 0.2rem;
-        padding: 0.6rem 0;
+        padding: 0.6rem 0.2rem;
+        height: 2.2rem;
     }
 
     .toResult p{
