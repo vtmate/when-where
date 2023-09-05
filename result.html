@@ -102,6 +102,9 @@ button{
 
 .toResponse button{
     padding: 0.2rem 0.8rem;
+    cursor: pointer;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
 }
 
 .list{
@@ -139,7 +142,7 @@ button{
     <div class="content">
         <div class="center">
             <div id="dayHolder"></div>
-            <div class="toResponse"><button>Vissza a szavazásra</button></div>
+            <div class="toResponse"><button id="toResponse">Vissza a szavazásra</button></div>
         </div>
     </div>
 
@@ -185,6 +188,12 @@ button{
                 return this.dayCard;
             }
         }
+
+        //going back to response
+        const back = document.getElementById('toResponse');
+        back.addEventListener('click', () => {
+            window.history.back();
+        });
 
         //creating dayCards
         result2.forEach(element => {

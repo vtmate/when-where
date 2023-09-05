@@ -128,7 +128,8 @@ label{
 }
 
 .submit{
-    padding: 0.2rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
 }
 
 .submit:active{
@@ -136,10 +137,11 @@ label{
 }
 
 .toResult{
-    margin-top: 4rem;
+    margin-top: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-inline: clamp(0.5rem, 1vw, 0.58333rem);
 }
 
 .toResult p{
